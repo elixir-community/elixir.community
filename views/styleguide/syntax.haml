@@ -1,0 +1,187 @@
+%section
+  %p Use parentheses when you have arguments, no parentheses when you don't.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          def some_function arg1, arg2 do
+            # body omitted
+          end
+
+          def some_function() do
+            # body omitted
+          end
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          def some_function(arg1, arg2) do
+            # body omitted
+          end
+
+          def some_function do
+            # body omitted
+          end
+
+%section
+  %p
+    Never use
+    %span.keyword do:
+    for multi-line
+    %span.keyword if/unless.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          if some_condition, do:
+            # a line of code
+            # another line of code
+            # note no end in this block
+            
+
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          if some_condition do
+            # some
+            # lines
+            # of code
+          end
+
+%section
+  %p
+    Use
+    %span.keyword do:
+    for single-line
+    %span.keyword if/unless
+
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          if some_condition, do:
+            # some_stuff
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          if some_condition, do: # some_stuff
+          
+
+%section
+  %p
+    Never use
+    %span.keyword unless
+    with
+    %span.keyword else
+    rewrite these with the positive case first.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          unless success? do
+            IO.puts 'failure'
+          else
+            IO.puts 'success'
+          end
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          if success? do
+            IO.puts 'success'
+          else
+            IO.puts 'failure'
+          end
+
+%section
+  %p
+    Always use
+    %span.keyword true
+    as the last condition of a
+    %span.keyword cond
+    statement.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          cond do
+            1 + 2 == 5 ->
+              "Nope"
+            1 + 3 == 5 ->
+              "Uh, uh"
+            _ ->
+              "OK"
+          end
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          cond do
+            1 + 2 == 5 ->
+              "Nope"
+            1 + 3 == 5 ->
+              "Uh, uh"
+            true ->
+              "OK"
+          end
+
+%section
+  %p Never put a space between a function name and the opening parenthesis.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          f (3 + 2) + 1
+          f 3 |> g # Parses as f (3 |> g)
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          f(3 + 2) + 1
+          f(3) |> g
+
+%section
+  %p Omit parentheses in macro calls when a do block is passed.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          quote(do
+            foo
+          end)
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          quote do
+            foo
+          end
+
+%section
+  %p
+    Optionally omit parentheses in function calls (outside a pipeline) when the last 
+    argument is a function expression.
+
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          Enum.reduce 1..10, 0, fn x, acc ->
+            x + acc
+          end
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          Enum.reduce(1..10, 0, fn x, acc ->
+            x + acc
+          end)

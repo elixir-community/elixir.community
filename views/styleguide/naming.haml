@@ -1,0 +1,87 @@
+%section
+  %p Use snake_case for atoms, functions and variables.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          :"some atom"
+          :SomeAtom
+          :someAtom
+
+          someVar = 5
+
+          def someFunction do
+            ...
+          end
+
+          def SomeFunction do
+           ...
+          end
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          :some_atom
+
+
+
+          some_var = 5
+
+          def some_function do
+            ...
+          end
+          
+          
+          
+          
+
+%section
+  %p
+    Use CamelCase for modules (Keep acronyms like HTTP, RFC, XML uppercase).
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule Somemodule do
+            ...
+          end
+
+          defmodule Some_Module do
+            ...
+          end
+
+          defmodule SomeXml do
+            ...
+          end
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+            ...
+          end
+
+          defmodule SomeXML do
+            ...
+          end
+          
+          
+          
+          
+
+%section
+  %p
+    The names of predicate functions (a function that return a boolean value) should 
+    have a trailing question mark rather than a leading
+    %span.keyword is_
+    or similar.
+
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          def cool?(var) do
+            # checks if var is cool
+          end

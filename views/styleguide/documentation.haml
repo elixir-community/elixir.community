@@ -1,0 +1,137 @@
+%section
+  %p
+    Documentation in Elixir (when read either in
+    %span.keyword iex
+    with
+    %span.keyword h
+    or generated with
+    %a{href: 'https://github.com/elixir-lang/ex_doc'} ExDoc
+    uses the Module Attributes
+    %span.keyword @moduledoc
+    and
+    %span.keyword @doc
+
+  %p
+    Always include an
+    %span.keyword @moduledoc
+    attribute the line after
+    %span.keyword defmodule
+    in your module.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+
+            @moduledoc """
+            About the module
+            """
+            ...
+          end
+
+          defmodule AnotherModule do
+            use SomeModule
+            @moduledoc """
+            About the module
+            """
+            ...
+          end
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+            @moduledoc """
+            About the module
+            """
+            ...
+          end
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+%section
+  %p
+    Use
+    %span.keyword @moduledoc
+    false if you do not intend on documenting the module.
+
+  .example
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+            @moduledoc false
+            ...
+          end
+%section
+  %p
+    Separate code after the
+    %span.keyword @moduledoc
+    with a new line.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+            @moduledoc """
+            About the module
+            """
+            use AnotherModule
+          end
+          
+
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+            @moduledoc """
+            About the module
+            """
+
+            use AnotherModule
+          end
+%section
+  %p Use heredocs with markdown for documentation.
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+            @moduledoc "About the module"
+          end
+
+          defmodule SomeModule do
+            @moduledoc """
+            About the module
+
+            Examples:
+            iex> SomeModule.some_function
+            :result
+            """
+          end
+
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          defmodule SomeModule do
+            @moduledoc """
+            About the module
+
+            ## Examples
+
+                iex> SomeModule.some_function
+                :result
+            """
+          end

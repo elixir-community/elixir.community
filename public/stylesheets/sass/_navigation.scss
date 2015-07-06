@@ -1,0 +1,53 @@
+nav {
+  background-color: $primary-color;
+  display: block;
+  min-height: 60px;
+  border-bottom: 2px solid $nav-hover-color;
+  float:left;
+  width: 100%;
+}
+
+nav ul {
+  display: block;
+  float: left;
+  text-align: left;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul li {
+  display: block;
+  list-style-type: none;
+  float:left;
+}
+
+nav ul li a {
+  color: $nav-link-color;
+  display: inline-block;
+  line-height: 60px;
+  text-decoration: none;
+  padding: 0em 1.0em;
+}
+
+nav ul li a:hover {
+  // @include span-columns(5)
+  background-color: $nav-hover-color;
+}
+
+i.icon {
+  font-size: 1.5em;
+  padding-right: 0.1em;
+}
+
+.menu {
+  width: 100%;
+  background-color: red;
+  float: left;
+}
+
+.item {
+  width: 300px;
+  height: 30px;
+  float: left;
+}

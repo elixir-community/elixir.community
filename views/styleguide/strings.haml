@@ -1,0 +1,13 @@
+%section
+  %p Match strings using the string concatenator rather than binary patterns:
+
+  .not-preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          <<"my"::utf8, _rest>> = "my string"
+  .preferred
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          "my" <> _rest = "my string"

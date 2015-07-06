@@ -1,0 +1,26 @@
+@import "variables";
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $background-color;
+  font-family: "Fira Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+  padding: 0.5em 0em;
+}
+
+h2, h3 {
+  margin: 1.2em 0em 0em 0em;
+}
+
+p {
+  margin: 0.5em 0em 0em 0em;
+  font-size: 1.1em;
+}
+

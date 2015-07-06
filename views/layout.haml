@@ -1,0 +1,51 @@
+%html
+  %head
+    %title elixir-community
+    %link{type: 'text/css', rel: 'stylesheet', href: '/stylesheets/application.css'}
+    %script{src:'https://use.fonticons.com/3bba9b78.js'}
+    %script{src:'/javascripts/highlight.pack.js'}
+    %link{rel:'stylesheet', href:'/stylesheets/highlightjs/tomorrow-night-eighties.css'}
+  %body
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64630421-1', 'auto');
+      ga('send', 'pageview');
+
+    .container
+      %nav
+        .middle
+          %ul
+            %li
+              %a{href: '/'}
+                %i.icon.icon-heart
+                welcome
+            %li
+              %a{href: '/talk'}
+                %i.icon.icon-bubble
+                talk
+            %li
+              %a{href: '/styleguide'}
+                %i.icon.icon-t-shirt
+                styleguide
+            %li
+              %a{href: '/materials'}
+                %i.icon.icon-study
+                materials
+            %li
+              %a{href: '/meetups'}
+                %i.icon.icon-location
+                meetups
+
+      %section.hero
+        .middle
+          %h1= locals[:title] || 'Elixir.community/0'
+      .middle
+        = yield
+
+
+    :javascript
+      hljs.initHighlightingOnLoad();

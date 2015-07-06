@@ -1,0 +1,30 @@
+%section
+  %p
+    Use one module per file unless the module is only used internally by another module (such as a test).
+    Use underscored file names for CamelCase module names.
+
+  .example
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          # filename is some_module.ex
+          defmodule SomeModule do
+          end
+
+  %p Represent each level of nesting within a module name as a directory.
+
+  .example
+    %pre
+      %code.language-elixir{:'data-lang' => 'elixir'}
+        :preserve
+          # filepath is parser/core/xml_parser.ex
+          defmodule Parser.Core.XMLParser do
+          end
+
+%section
+  %ul
+    %li
+      No newline after
+      %span.keyword defmodule
+    %li No newline before first function def.
+    %li Newline after "module-level-code-blocks".

@@ -1,0 +1,81 @@
+%section
+  %p
+    Elixir is a lot like Ruby on the surface, but there are some big differences.  It can
+    be a struggle to know how to style your code.  Thankfully
+    %a{href: 'https://github.com/niftyn8'} niftynate
+    put together a style guide.  I found it very helpful and have reproduced it here in a
+    slightly friendlier format.  All of the original work can be found
+    %a{href:'/repo'} in their repository.
+
+%section
+  %ul
+    %li
+      %a{href: '#layout'} Layout
+    %li
+      %a{href: '#syntax'} Syntax
+    %li
+      %a{href: '#naming'} Naming
+    %li
+      %a{href: '#comments'} Comments
+    %li
+      %a{href: '#annotations'} Comment Annotations
+    %li
+      %a{href: '#modules'} Modules
+    %li
+      %a{href: '#documentation'} Documentation
+    %li
+      %a{href: '#strings'} Strings
+    %li
+      %a{href: '#metaprogramming'} Metaprogramming
+    %li
+      %a{href: '#alternatives'} Suggested Alternatives
+
+%section{height: '400px'}
+  %a{name: 'layout'}
+    %h2 Layout
+  = haml :'styleguide/layout'
+
+%section
+  %a{name: 'syntax'}
+    %h2 Syntax
+  = haml :'styleguide/syntax'
+
+%section
+  %a{name: 'naming'}
+    %h2 Naming
+  = haml :'styleguide/naming'
+
+%section
+  %a{name: 'comments'}
+    %h2 Comments
+  = haml :'styleguide/comments'
+
+%section
+  %a{name: 'annotations'}
+    %h2 Comment Annotations
+  = haml :'styleguide/comment_annotations'
+
+%section
+  %a{name: 'modules'}
+    %h2 Modules
+  = haml :'styleguide/modules'
+
+%section
+  %a{name: 'documentation'}
+    %h2 Documentation
+  = haml :'styleguide/documentation'
+
+%section
+  %a{name: 'strings'}
+    %h2 Strings
+  = haml :'styleguide/strings'
+
+%section
+  %a{name: 'metaprogramming'}
+    %h2 Metaprogramming
+  = haml :'styleguide/metaprogramming'
+
+%section
+  %a{name: 'alternatives'}
+    %h2 Suggested Alternatives
+  = haml :'styleguide/suggested_alternatives'

@@ -1,0 +1,80 @@
+@import "bourbon/bourbon";
+@import "grid-settings";
+@import "neat/neat";
+@import "variables";
+@import "navigation";
+@import "base";
+
+h2 a {
+  text-decoration: none;
+  color: $link-color;
+}
+
+p a, section ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  color: $link-color;
+}
+
+p a:hover, h2 a:hover, section ul li a:hover {
+  color: $link-hover-color;
+}
+
+span.keyword {
+  @include border-top-radius(4px);
+  @include border-bottom-radius(4px);
+  border: 2px solid $link-hover-color;
+  color: $nav-link-color;
+  background-color: $link-hover-color;
+}
+
+section.hero {
+  background: $hero-background-color;
+  height: 100px;
+  @include span-columns(10);
+}
+
+section {
+  @include span-columns(10);
+}
+
+.middle {
+  @include shift(2);
+  @include span-columns(6);
+}
+
+.container {
+  @include outer-container;
+}
+
+
+.preferred {
+  padding: 0px;
+  margin: 0px;
+  @include span-columns(5);
+}
+
+.example {
+  @include span-columns(10);
+}
+
+.not-preferred {
+  padding: 0px;
+  margin: 0px;
+  @include span-columns(5);
+}
+
+.example pre {
+  border-top: 6px solid black;
+  @include border-top-radius(5px);
+}
+
+.preferred pre {
+  border-top: 6px solid green;
+  @include border-top-radius(5px);
+}
+
+.not-preferred pre {
+  border-top: 6px solid red;
+  @include border-top-radius(5px);
+}
